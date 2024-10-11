@@ -4,9 +4,9 @@ mongoose.set("strictPopulate", false);
 const db = require("./models");
 
 
-//========================================= CASE 1: MONGOOSE ONE-TO-MANY(FEW) RELATIONSHIP =========================================
+// CASE 1: MONGOOSE ONE-TO-MANY(FEW) RELATIONSHIP
 
-//================ IMAGES ================
+// IMAGES 
 
 //CREATING A NEW TUTORIALS COLLECTION
 const createTutorial = function (tutorial) {
@@ -53,9 +53,9 @@ const createTutorial = function (tutorial) {
 //   });
 // };
 
-//=========================================CASE 2: MONGOOSE ONE-TO-MANY(MANY) RELATIONSHIP=====================================
+//CASE 2: MONGOOSE ONE-TO-MANY(MANY) RELATIONSHIP
 
-//--------------------COMMENTS---------------------
+//COMMENTS
 //Creating a new Comment (Returns reference IDs)
 const createComment = function (tutorialId, comment) {
   return db.Comment.create(comment).then((docComment) => {
@@ -84,9 +84,9 @@ const getTutorialWithPopulate = function (id) {
 
 
 
-//=========================================CASE 3: MONGOOSE ONE-TO-MANY(LOT) RELATIONSHIP=====================================
+//CASE 3: MONGOOSE ONE-TO-MANY(LOT) RELATIONSHIP
 
-//--------------------CATEGORIES---------------------
+//CATEGORIES
 
 const createCategory = function(category) {
     return db.Category.create(category)
@@ -110,7 +110,7 @@ const getTutorialsInCategory = function(categoryId) {
     .select("-comments -images -__v");
 }
 
-//---------------------RUN FUNCTION-----------------
+//RUN FUNCTION
 const run = async function () {
   //Create New Tutorial
   let tutorial = await createTutorial({
