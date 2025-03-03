@@ -1,7 +1,7 @@
 3 + 3
 3 / 0
 console.log("Hello, Universe");
-let name = "Bhabha September";
+let name = "diego";
 console.log(name);
 class Goat {
 eat(foodType) {
